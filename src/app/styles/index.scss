@@ -1,0 +1,51 @@
+@import url('../../../public/fonts/fonts.css');
+@import url('./normalize.scss');
+@import url('./typography.scss');
+@import url('./page.scss');
+
+:root {
+	font-family: Poppins, sans-serif, system-ui;
+	line-height: 1.5;
+	font-weight: 400;
+
+	color-scheme: light dark;
+	color: var(--color-2);
+	background-color: var(--color-3);
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	--color-1: rgb(255, 255, 255);
+	--color-2: rgb(0, 0, 0, 0.8);
+	--color-3: rgb(247, 247, 247);
+	--color-2-20: rgba(0, 0, 0, 0.2);
+	--color-2-50: rgba(0, 0, 0, 0.5);
+	--color-brand-primary: rgb(59, 59, 59);
+	--color-brand-variant: rgb(98, 67, 230);
+	--color-brand-secondary: rgb(109, 74, 255);
+	--color-brand-assist: rgb(153, 129, 255);
+	--color-assistitive-red-active: rgb(215, 35, 35);
+	--color-assistitive-focus: rgb(53, 205, 253);
+
+	--transition: all 0.2s ease;
+	--box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+body {
+	margin: 0;
+	min-width: 320px;
+	min-height: 100vh;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		color: var(--color-2);
+		background-color: var(--color-3);
+	}
+}

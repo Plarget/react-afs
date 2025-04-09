@@ -1,0 +1,5 @@
+export { useGetByIdCompany } from './useGetByIdCompany'
+export { usePatchCompany } from './usePatchCompany'
+export { useDeleteCompany } from './useDeleteCompany'
+export { useDeleteImageCompany } from './useDeleteImageCompany'
+export { useUploadImageCompany } from './useUploadImageCompany'

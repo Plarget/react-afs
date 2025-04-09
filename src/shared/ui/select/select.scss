@@ -1,0 +1,121 @@
+.select {
+	position: relative;
+	width: 100%;
+	&__input-inner {
+		display: inline-flex;
+		align-items: center;
+		height: 40px;
+		padding: 0 12px;
+		border-radius: 8px;
+		width: 100%;
+		transition: var(--transition);
+		border: 1px solid var(--color-2-20);
+		outline: 1px solid transparent;
+		cursor: pointer;
+
+		&:hover:not(&--opened):not(:focus-within) {
+			border-color: var(--color-2-50);
+		}
+
+		&:focus-within,
+		&--opened {
+			border-color: var(--color-assistitive-focus);
+			outline: 1px solid var(--color-assistitive-focus);
+		}
+		svg {
+			cursor: pointer;
+			transition: all 0.2s ease;
+		}
+		&--opened {
+			svg {
+				transform: rotate(180deg);
+			}
+		}
+	}
+	&__input {
+		border: none;
+		outline: none;
+		background-color: transparent;
+		font-family: inherit;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 24px;
+		color: var(--color-2);
+		height: 100%;
+		cursor: pointer;
+		flex: 1;
+	}
+	&__options {
+		position: absolute;
+		top: 100%;
+		width: 100%;
+		border-radius: 8px;
+		padding: 8px 0;
+		margin-top: 4px;
+		box-shadow: var(--box-shadow);
+		z-index: 100;
+		background-color: var(--color-1);
+	}
+	&__option {
+		display: inline-flex;
+		align-items: center;
+		width: 100%;
+		gap: 12px;
+		padding: 12px 16px;
+		font-size: 13px;
+		line-height: 20px;
+		transition: var(--transition);
+		cursor: pointer;
+
+		&:hover {
+			background-color: rgb(0, 0, 0, 0.05);
+		}
+
+		&--selected {
+			background-color: rgb(0, 0, 0, 0.05);
+			font-weight: 500;
+		}
+	}
+	&__checkbox-inner {
+		display: inline-block;
+		position: relative;
+	}
+	&__checkbox {
+		opacity: 0;
+		width: 0;
+		height: 0;
+		position: absolute;
+
+		& + &-label {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 20px;
+			height: 20px;
+			border: 1px solid rgb(0, 0, 0, 0.3);
+			border-radius: 4px;
+			margin: 2px;
+			cursor: pointer;
+			position: relative;
+			background-color: var(--color-1);
+			transition: var(--transition);
+
+			&::after {
+				content: '';
+				width: 12px;
+				height: 16px;
+				background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTMiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMyAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTExLjkyNCAxLjA3NmEuNi42IDAgMCAxIDAgLjg0OWwtNyA3YS42LjYgMCAwIDEtLjg0OCAwbC0zLjUtMy41YS42LjYgMCAxIDEgLjg0OC0uODQ5TDQuNSA3LjY1Mmw2LjU3Ni02LjU3NmEuNi42IDAgMCAxIC44NDggMCIgZmlsbD0iIzAwMCIgZmlsbC1vcGFjaXR5PSIuOCIvPjwvc3ZnPg==');
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: center;
+				opacity: 0;
+				transition: var(--transition);
+			}
+		}
+
+		// При активном чекбоксе показываем галочку
+		&:checked + &-label::after {
+			opacity: 1;
+		}
+	}
+}

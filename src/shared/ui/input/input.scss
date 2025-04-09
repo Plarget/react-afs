@@ -1,0 +1,62 @@
+.input {
+	display: inline-flex;
+	align-items: start;
+	padding: 0 12px;
+	height: 40px;
+	border-radius: 8px;
+	width: 100%;
+	border: none;
+	transition: all 0.2s ease;
+	font-family: inherit;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 24px;
+	background-color: transparent;
+	color: var(--color-2);
+	border: 1px solid var(--color-2-20);
+	outline: 1px solid transparent;
+
+	&:hover {
+		border-color: var(--color-2-50);
+	}
+
+	&:focus,
+	&:focus-within {
+		border: 1px solid var(--color-assistitive-focus);
+		outline: 1px solid var(--color-assistitive-focus);
+	}
+}
+
+input[type='date'] {
+	display: inline;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	// Скрываем иконку календаря
+	&::-webkit-calendar-picker-indicator {
+		opacity: 0;
+		cursor: pointer;
+		position: absolute;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	// Скрываем текст placeholder
+	&::-webkit-datetime-edit-text,
+	&::-webkit-datetime-edit-month-field,
+	&::-webkit-datetime-edit-day-field,
+	&::-webkit-datetime-edit-year-field {
+	}
+
+	// Показываем текст только при фокусе
+	&:focus {
+		&::-webkit-datetime-edit-text,
+		&::-webkit-datetime-edit-month-field,
+		&::-webkit-datetime-edit-day-field,
+		&::-webkit-datetime-edit-year-field {
+			color: inherit;
+		}
+	}
+}

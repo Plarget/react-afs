@@ -1,0 +1,76 @@
+.card {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	padding: 24px;
+	border-radius: 16px;
+	box-shadow: 0 3px 8px rgb(0, 0, 0, 0.12);
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
+
+		&-actions {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+		}
+	}
+
+	&__body {
+		display: grid;
+		gap: 2px;
+
+		&-list {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: 12px;
+
+		}
+
+        &--is-editing {
+            gap: 12px;
+        }
+	}
+	&__row {
+		display: grid;
+		align-items: center;
+		grid-template-columns: 160px 1fr;
+		gap: 12px;
+		min-height: 32px;
+		&-label {
+			font-size: 13px;
+			line-height: 20px;
+			letter-spacing: 0.25px;
+			color: rgb(0, 0, 0, 0.5);
+		}
+
+		&-value {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+			font-size: 14px;
+			line-height: 24px;
+			letter-spacing: 0.3px;
+
+			p {
+				font-size: inherit;
+				line-height: inherit;
+				letter-spacing: inherit;
+			}
+            span {
+                color: rgb(0, 0, 0, 0.3);
+            }
+
+			&-inner {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                width: 100%;
+			}
+		}
+	}
+}

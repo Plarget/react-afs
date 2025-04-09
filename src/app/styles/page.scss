@@ -1,0 +1,41 @@
+.page {
+	display: flex;
+	height: 100vh;
+	overflow: hidden;
+
+	&__content {
+        flex: 1;
+		overflow-y: auto;
+        scrollbar-gutter: stable both-edges;
+        
+		&-back {
+            margin: 4px 0;
+		}
+        
+		&-inner {
+            margin: 40px auto;
+			max-width: 704px;
+			display: grid;
+			grid-template-columns: 1fr 640px;
+			gap: 32px;
+		}
+        
+        
+		&-wrapper {
+            display: grid;
+            gap: 32px;
+		}
+	}
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+
+        &-actions {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+    }
+}
